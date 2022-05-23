@@ -7,7 +7,7 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		echo "OpenVZ is not supported"
 		exit 1
 fi
-# My Telegram : https://t.me/Manternet
+# My Telegram : https://t.me/RocknetStore
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -24,7 +24,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 # Getting
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip > /root/tmp
+    curl -sS https://raw.githubusercontent.com/rockneters/rockvpn/main/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -42,7 +42,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/rockneters/rockvpn/main/ip | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -59,7 +59,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | awk '{print $4}' | grep $MYIP )
+    IZIN=$(curl -sS https://raw.githubusercontent.com/rockneters/rockvpn/main/ip | awk '{print $4}' | grep $MYIP )
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -88,101 +88,101 @@ clear
 
 #Folder
 MYIP=$(curl -sS ipv4.icanhazip.com)
-mkdir /var/lib/Manpokr;
-echo "IP=" >> /var/lib/Manpokr/ipvps.conf
+mkdir /var/lib/RocknetZ;
+echo "IP=" >> /var/lib/RocknetZ/ipvps.conf
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
-echo "IP=$domain" >> /var/lib/Manpokr/ipvps.conf
+echo "IP=$domain" >> /var/lib/RocknetZ/ipvps.conf
 
 #Warna
 apt install lolcat -y
 apt install toilet - y
 
 #Domain
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/addon/cf.sh
 chmod +x cf.sh
 ./cf.sh
 
 #SSH & OPenVPN
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssh-vpn.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/setup/ssh-vpn.sh
 chmod +x ssh-vpn.sh 
 screen -S ssh-vpn ./ssh-vpn.sh
 
 #ShadowsocksR
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssr.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/setup/ssr.sh
 chmod +x ssr.sh
 screen -S ssr ./ssr.sh
 
 #Shadowsocks
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/sodosok.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/setup/sodosok.sh
 chmod +x sodosok.sh
 screen -S ss ./sodosok.sh
 
 #Wireguards
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/wg.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/setup/wg.sh
 chmod +x wg.sh 
 screen -S wg ./wg.sh
 
 #XRay
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-xray.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/setup/ins-xray.sh
 chmod +x ins-xray.sh
 screen -S xray ./ins-xray.sh
 
 #V2Ray
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-vt.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/setup/ins-vt.sh
 chmod +x ins-vt.sh
 screen -S vt ./ins-vt.sh
 
 #trojango
 #Backup
-wget https://raw.githubusercontent.com/Manpokr/mon/main/backup/set-br.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/backup/set-br.sh
 chmod +x set-br.sh 
 ./set-br.sh
 
 # Websocket
-wget https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/websocket/ws.sh
 chmod +x ws.sh
 ./ws.sh 
 
 #OHP 
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ohp.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/setup/ohp.sh
 chmod +x ohp.sh
 ./ohp.sh
 
 #Cert
 apt install socat -y
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cert.sh
+wget https://raw.githubusercontent.com/rockneters/rockvpn/main/addon/cert.sh
 chmod +x cert.sh
 ./cert.sh
 
 cd /usr/bin
-wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
-wget -O portsquid "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsquid.sh"
-wget -O portwg "https://raw.githubusercontent.com/Manpokr/mon/main/port/portwg.sh"
-wget -O portvlm "https://raw.githubusercontent.com/Manpokr/mon/main/port/portvlm.sh"
-wget -O porttrojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/porttrojan.sh"
-wget -O port-trojango "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojango.sh"
-wget -O port-xws "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xws.sh"
-wget -O port-xvl "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xvl.sh"
-wget -O port-xtr "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xtr.sh"
-wget -O port-xtls "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xtls.sh"
-wget -O port-vmess "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-vmess.sh"
-wget -O port-vless "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-vless.sh"
-wget -O port-trojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojan.sh"
-wget -O port-grpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-grpc.sh"
-wget -O port-trxtls "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trxtls.sh"
-wget -O port-trgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trgrpc.sh"
-wget -O menu-ssh "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssh.sh"
-wget -O menu-wg "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-wg.sh"
-wget -O menu-ssr "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssr.sh"
-wget -O menu-xray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-xray.sh"
-wget -O menu-v2ray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-v2ray.sh"
-wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/system-menu.sh"
-wget -O trial-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/trial-menu.sh"
-wget -O menu-bbt "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bbt.sh"
-wget -O running "https://raw.githubusercontent.com/Manpokr/mon/main/menu/running.sh"
-wget -O menu-bw "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bw"
+wget -O portovpn "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/portovpn.sh"
+wget -O portsquid "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/portsquid.sh"
+wget -O portwg "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/portwg.sh"
+wget -O portvlm "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/portvlm.sh"
+wget -O porttrojan "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/porttrojan.sh"
+wget -O port-trojango "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-trojango.sh"
+wget -O port-xws "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-xws.sh"
+wget -O port-xvl "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-xvl.sh"
+wget -O port-xtr "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-xtr.sh"
+wget -O port-xtls "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-xtls.sh"
+wget -O port-vmess "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-vmess.sh"
+wget -O port-vless "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-vless.sh"
+wget -O port-trojan "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-trojan.sh"
+wget -O port-grpc "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-grpc.sh"
+wget -O port-trxtls "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-trxtls.sh"
+wget -O port-trgrpc "https://raw.githubusercontent.com/rockneters/rockvpn/main/port/port-trgrpc.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/menu-ssh.sh"
+wget -O menu-wg "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/menu-wg.sh"
+wget -O menu-ssr "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/menu-ssr.sh"
+wget -O menu-xray "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/menu-xray.sh"
+wget -O menu-v2ray "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/menu-v2ray.sh"
+wget -O system-menu "https://raw.githubusercontent.com/rockneters/rockvpn/main/setup/system-menu.sh"
+wget -O trial-menu "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/trial-menu.sh"
+wget -O menu-bbt "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/menu-bbt.sh"
+wget -O running "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/running.sh"
+wget -O menu-bw "https://raw.githubusercontent.com/rockneters/rockvpn/main/menu/menu-bw"
 chmod +x portovpn
 chmod +x portsquid
 chmod +x portwg
