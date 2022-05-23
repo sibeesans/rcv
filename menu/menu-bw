@@ -1,0 +1,179 @@
+#!/bin/bash
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+bd='\e[1m'
+
+clear
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}         • BANDWITH MONITOR •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+echo -e "[${CYAN}•1${NC}] $bd Lihat Total Bandwith Tersisa${NC}"
+echo -e "[${CYAN}•2${NC}] $bd Tabel Penggunaan Setiap 5 Menit${NC}"
+echo -e "[${CYAN}•3${NC}] $bd Tabel Penggunaan Setiap Jam${NC}"
+echo -e "[${CYAN}•4${NC}] $bd Tabel Penggunaan Setiap Hari${NC}"
+echo -e "[${CYAN}•5${NC}] $bd Tabel Penggunaan Setiap Bulan${NC}"
+echo -e "[${CYAN}•6${NC}] $bd Tabel Penggunaan Setiap Tahun${NC}"
+echo -e "[${CYAN}•7${NC}] $bd Tabel Penggunaan Tertinggi${NC}"
+echo -e "[${CYAN}•8${NC}] $bd Statistik Penggunaan Setiap Jam${NC}"
+echo -e "[${CYAN}•9${NC}] $bd Lihat Penggunaan Aktif Saat Ini${NC}"
+echo -e "[${CYAN}10${NC}] $bd Lihat Trafik Penggunaan Aktif Saat Ini [5s]${NC}"
+echo -e ""
+echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+read -p "  Please Enter The Number  [1-10 or x] :  "  menu
+echo -e ""
+clear
+case $menu in
+1)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}      • TOTAL BANDWITH SERVER LEFT •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+2)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}      • USE BANDWITH EVERY 5 MINUTES •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat -5
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+3)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}       • USE BANDWITH EVERY HOUR •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat -h
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+4)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}        • USE BANDWITH EVERY DAY •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat -d
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+5)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}       • USE BANDWITH EVERY MONTH •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat -m
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+6)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}        • USE BANDWITH EVERY YEARS •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat -y
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+7)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}          • HIGHEST BANDWITH USE •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat -t
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+8)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}   • BANDWITH GRAPHICS USED EVERY HOUR •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat -hg
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+9)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}     • LIVE USE OF BANDWITH CURRENTLY •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+echo -e " ${white}CTRL+C Untuk Keluar!${off}"
+echo -e ""
+
+vnstat -l
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+10)
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}       • LIVE TRAFFIC USE BANDWITH •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+
+vnstat -tr
+
+echo -e ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+;;
+
+x)
+sleep 1
+menu
+;;
+
+*)
+sleep 1
+echo "Masukkan Nomor Yang Ada"
+bw
+;;
+esac
