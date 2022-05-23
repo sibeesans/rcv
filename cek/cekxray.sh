@@ -7,12 +7,15 @@ echo "Checking VPS"
 #EDIT IZIN
 clear
 echo -n > /tmp/other.txt
-data=( `cat /etc/xray/xrayxtls.json | grep '^###' | cut -d ' ' -f 2`);                                                              echo "-------------------------------";
+data=( `cat /etc/xray/xrayxtls.json | grep '^###' | cut -d ' ' -f 2`);
+echo "-------------------------------";
 echo "-----------------------------------------";
 echo "-------=[ XRAY Xtls User Login ]=-------";
-echo "-----------------------------------------";                                                                                            for akun in "${data[@]}"
+echo "-----------------------------------------";
+for akun in "${data[@]}"
 do
-if [[ -z "$akun" ]]; then                                                                                                           akun="tidakada"
+if [[ -z "$akun" ]]; then
+akun="tidakada"
 fi
 echo -n > /tmp/ipvless.txt
 data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep xray | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
