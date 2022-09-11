@@ -7,7 +7,7 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/rockneters/rockvpn/main/ip | awk '{print $4}' | grep $MYIP )
+IZIN=$(curl -sS https://raw.githubusercontent.com/sibeesans/rcv/main/ip | awk '{print $4}' | grep $MYIP )
 if [[ $MYIP = $IZIN ]]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
