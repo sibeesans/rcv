@@ -17,7 +17,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ########################
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo "Checking VPS"                                                                                                               
-IZIN=$(curl -sS https://raw.githubusercontent.com/Rocknet Store/ipvps/main/ip | awk '{print $4}' | grep $MYIP )                       
+IZIN=$(curl -sS https://raw.githubusercontent.com/sibeesans/rcv/main/ip | awk '{print $4}' | grep $MYIP )                       
 if [[ $MYIP = $IZIN ]]; then                                                                                                      
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"                                                                                
 else                                                                                                                              
